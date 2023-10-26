@@ -1,0 +1,26 @@
+name: Use Depot
+description: Install and use Depot to build Docker images
+author: Depot
+branding:
+  icon: package
+  color: gray-dark
+runs:
+  using: node16
+  main: dist/index.js
+inputs:
+  version:
+    description: |-
+      Version of the Depot CLI to install. If unspecified or set to "latest",
+      the latest version for the target platform will be installed. Example: "0.0.2".
+    default: latest
+    required: false
+  project:
+    description: |-
+      If set, will populate the `DEPOT_PROJECT_ID` environment variable.
+    default: ''
+    required: false
+  token:
+    description: |-
+      If set, will populate the `DEPOT_TOKEN` environment variable.
+    default: ''
+    required: false
