@@ -1,26 +1,23 @@
-name: Use Depot
-description: Install and use Depot to build Docker images
+name: Depot Pull
+description: Pull images from the Depot ephemeral registry.
 author: Depot
 branding:
   icon: package
   color: gray-dark
 runs:
-  using: node16
+  using: node20
   main: dist/index.js
 inputs:
-  version:
-    description: |-
-      Version of the Depot CLI to install. If unspecified or set to "latest",
-      the latest version for the target platform will be installed. Example: "0.0.2".
-    default: latest
+  build-id:
+    description: The build ID to pull.
+    required: true
+  platform:
+    description: The platform to pull (defaults to the current platform).
     required: false
-  project:
-    description: |-
-      If set, will populate the `DEPOT_PROJECT_ID` environment variable.
-    default: ''
+  tags:
+    description: A list of tags to apply to the pulled image
     required: false
   token:
-    description: |-
-      If set, will populate the `DEPOT_TOKEN` environment variable.
+    description: If set, will populate the `DEPOT_TOKEN` environment variable.
     default: ''
     required: false
