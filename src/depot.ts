@@ -46,7 +46,11 @@ async function execDepot(cmd: string, args: string[], options?: Options) {
 }
 
 export async function pull(inputs: Inputs) {
-  const args = [...flag('--platform', inputs.platform), ...flag('--tag', inputs.tags)]
+  const args = [
+    ...flag('--platform', inputs.platform),
+    ...flag('--tag', inputs.tags),
+    ...flag('--target', inputs.target),
+  ]
 
   let token = inputs.token ?? process.env.DEPOT_TOKEN
 
