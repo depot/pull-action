@@ -23,5 +23,5 @@ inputs:
     required: false
   target:
     description: Specific bake target to pull.
-    default: 'false'
+    default: ''
     required: false
