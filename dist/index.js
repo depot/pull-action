@@ -30521,8 +30521,8 @@ function getInputs() {
     buildID: core.getInput("build-id"),
     platform: core.getInput("platform"),
     tags: parseCSV(core.getInput("tags")),
-    token: core.getInput("target"),
-    target: core.getInput("token") || process.env.DEPOT_TOKEN
+    target: core.getInput("target"),
+    token: core.getInput("token") || process.env.DEPOT_TOKEN
   };
 }
 function parseCSV(source) {
