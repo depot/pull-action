@@ -5,6 +5,7 @@ export interface Inputs {
   buildID: string
   platform?: string
   tags: string[]
+  target?: string
   token?: string
 }
 
@@ -13,6 +14,7 @@ export function getInputs(): Inputs {
     buildID: core.getInput('build-id'),
     platform: core.getInput('platform'),
     tags: parseCSV(core.getInput('tags')),
+    target: core.getInput('target'),
     token: core.getInput('token') || process.env.DEPOT_TOKEN,
   }
 }
