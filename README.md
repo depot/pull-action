@@ -22,6 +22,24 @@ jobs:
             org/repo:tag
 ```
 
+Pull bake image targets:
+
+```yaml
+jobs:
+  job-name:
+    steps:
+      - uses: depot/setup-action@v1
+      - uses: depot/bake-action@v1
+        with:
+          save: true
+      - uses: depot/pull-action@v1
+        with:
+          build-id: ${{ steps.build.outputs.build-id }}
+          target: your-target
+          tags: |
+            org/repo:tag
+```
+
 ## Inputs
 
 | Name       | Type     | Required | Description                                                                                                |
