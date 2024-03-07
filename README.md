@@ -22,7 +22,7 @@ jobs:
             org/repo:tag
 ```
 
-Pull bake image targets:
+Pull all bake image targets:
 
 ```yaml
 jobs:
@@ -35,9 +35,6 @@ jobs:
       - uses: depot/pull-action@v1
         with:
           build-id: ${{ steps.build.outputs.build-id }}
-          target: your-target
-          tags: |
-            org/repo:tag
 ```
 
 ## Inputs
@@ -47,7 +44,7 @@ jobs:
 | `build-id` | string   | **yes**  | The build ID to pull images for.                                                                           |
 | `platform` | string   | no       | The image platform to pull (defaults to the current platform).                                             |
 | `tags`     | list/CSV | no       | A list of tags to apply to the pulled image.                                                               |
-| `target`   | string   | no       | For a bake build specifies the specific target to pull.                                                    |
+| `targets`  | list/CSV | no       | Only pull specific bake targets rather than all.                                                           |
 | `token`    | string   | no       | The API token to use for authentication. This can be overridden by the `DEPOT_TOKEN` environment variable. |
 
 ## License

@@ -49,7 +49,7 @@ export async function pull(inputs: Inputs) {
   const args = [
     ...flag('--platform', inputs.platform),
     ...flag('--tag', inputs.tags),
-    ...flag('--target', inputs.target),
+    ...flag('--target', inputs.targets),
   ]
 
   let token = inputs.token ?? process.env.DEPOT_TOKEN
