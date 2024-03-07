@@ -30521,7 +30521,7 @@ function getInputs() {
     buildID: core.getInput("build-id"),
     platform: core.getInput("platform"),
     tags: parseCSV(core.getInput("tags")),
-    target: core.getInput("target"),
+    targets: parseCSV(core.getInput("targets")),
     token: core.getInput("token") || process.env.DEPOT_TOKEN
   };
 }
@@ -32160,7 +32160,7 @@ async function pull(inputs) {
   const args = [
     ...flag("--platform", inputs.platform),
     ...flag("--tag", inputs.tags),
-    ...flag("--target", inputs.target)
+    ...flag("--target", inputs.targets)
   ];
   let token = inputs.token ?? process.env.DEPOT_TOKEN;
   const isOSSPullRequest = !token && github.context.eventName === "pull_request" && github.context.payload.repository?.private === false && github.context.payload.pull_request && github.context.payload.pull_request.head?.repo?.full_name !== github.context.payload.repository?.full_name;

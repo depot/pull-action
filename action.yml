@@ -21,7 +21,6 @@ inputs:
     description: If set, will populate the `DEPOT_TOKEN` environment variable.
     default: ''
     required: false
-  target:
-    description: Specific bake target to pull.
-    default: ''
+  targets:
+    description: Pull specific bake targets rather than all.
     required: false
